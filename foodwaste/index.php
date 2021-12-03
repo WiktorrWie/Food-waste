@@ -5,16 +5,16 @@ if (empty($_SESSION)){
     header("location: login/welcome.php");
     exit;
 }
-echo "<h3>Hey $_SESSION[email]</h3>";
+echo "<h3>Hey $_SESSION[first_name]</h3>";
 
 
-if (!empty($_GET)){
 
-    session_destroy();
-    header("location: index.php");
-}
+
+
 ?>
-
-<form action="?" method="GET">
+<a href=addPost.php>Create post </a>
+<form action="logout.php" method="GET">
 <input name="logout "type=submit value="log-out">
-<form>
+</form>
+
+<img src="images/posts/unga1638530774.png">
