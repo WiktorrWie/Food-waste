@@ -17,3 +17,6 @@ echo "<h3>Hey $_SESSION[first_name]</h3>";
 <input name="logout "type=submit value="log-out">
 </form>
 
+<img src="images/posts/unga1638530774.png">
+<br>
+<a href="profile.php"> Profile </a>

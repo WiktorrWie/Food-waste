@@ -1,13 +1,16 @@
+
 <?php
 
 ?>
 
+<body>
 <link rel="stylesheet" href="../css/main.css" type="text/css">
 <script src="../js/main.js"></script>
 
 <div id="welcome">
     <h5>Welcome to</h5>
-    
+    <img id="welcomeLogo" src="../icons/MinMad.png">
+    <h5>Ready to help the environment?</h5>
 
 </div>
 
@@ -43,6 +46,8 @@ if (isset($_GET["signup"])){
 </form>
 <button type="button" id="closeLogIn" onclick="closeLogIn()">Close</button>
 </div>
+
+</body>
 <?php 
 if (isset($_GET["signin"])){
     if ($_GET["signin"]=="error"){

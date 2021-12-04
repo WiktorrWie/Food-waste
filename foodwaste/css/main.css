@@ -1,6 +1,52 @@
+body{
+    background-color: #404040;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #signUp{
     display: none;
 }
 #logIn{
     display: none;
+}
+
+#welcomeLogo{
+    width: 239px;
+}
+
+.userImage{
+    width: 200px;
+    border-radius: 50%;
+    margin-left: 60px;
+}
+
+.changePhoto{
+    width: 60px;
+    border-radius: 50%;
+    position: relative;
+    top: -120px;
+    left: -30px;
+}
+
+.borderBottom{
+    border-bottom: 1px solid #fff;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.star{
+    width: 60px;
+}
+
+.plate{
+width: 200px;
+}
+
+.soldCount{
+    position: relative;
+    top: -140px;
 }

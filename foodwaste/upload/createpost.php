@@ -18,7 +18,7 @@ var_dump($file);
 if ($fileType == "png" || $fileType == "jpg" || $fileType == "jpeg") {
     if ($file["size"] < 2000000) {
     move_uploaded_file($file["tmp_name"], $targetFolder . $fileName);
-        $picture = "images/posts". $fileName;
+        $picture = "images/posts/". $fileName;
         //saving post into database. 
         //CALL addPost (userid, "title", "description", "image", "city");
         $sql= "CALL addPost('$_SESSION[userid]', '$title', '$description', '$picture', '$city')";
