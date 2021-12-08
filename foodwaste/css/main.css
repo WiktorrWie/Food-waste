@@ -57,18 +57,22 @@ width: 200px;
 
 #openSignUp{
     background-color: var(--green);
-    padding: 30px 200px;
+    padding: 30px 220px;
     font-size: 40pt;
     border-radius: 30px;
     font-weight: 500;
-    margin: 30px 0px 0px 0px;
+    margin: 30px 0px 20px 0px;
 }
 
 #openLogIn{
     color: var(--green);
     font-size: 30pt;
     font-weight: 400;
-    margin-top: 0px;
+    margin: 0px 0px 10px 0px;
+}
+
+#signUpButton{
+    margin: 0px 0px 10px 0px;
 }
 
 .subtitle{
@@ -81,12 +85,18 @@ width: 200px;
     position: absolute;
     background-color: var(--green);
     top: 53.5%;
-    padding: 100px;
+    padding: 60px 80px;
     border-radius: 30px;
     width: 65%;
 }
 #logIn{
     display: none;
+    position: absolute;
+    background-color: var(--green);
+    top: 53.5%;
+    padding: 60px 80px;
+    border-radius: 30px;
+    width: 65%;
 }
 
 #welcomeLogo{
@@ -102,7 +112,15 @@ width: 200px;
 }
 
 .marginA{
-    margin: 40px 0px 10px 0px;
+    margin: 20px 0px 10px 0px;
+}
+
+.marginB{
+    margin-top: 127px;
+}
+
+.marginC{
+    margin-bottom: 127px;
 }
 
 form{
@@ -119,12 +137,33 @@ input{
     border-radius: 20px;
     background-color: var(--gray);
     color: white;
+    font-family: 'Nunito';
+    width: 100%;
 }
 ::placeholder {
     color: white;
     opacity: 1; 
   }
 
-#submit{
+.submit{
     font-size: 40pt;
+    color: black;
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.white{
+    color: white !important;
+}
+
+.black{
+    color: black !important;
+}
+
+.center{
+    text-align: center;
 }

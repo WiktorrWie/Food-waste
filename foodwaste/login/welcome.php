@@ -17,16 +17,17 @@
     <img id="cooking" src="../icons/cooking.png">
 </div>
 
-<h5 id="openSignUp" onclick="openSignUp()">Sign Up</h5>
+<h5 id="openSignUp" class="button" onclick="openSignUp()">Sign Up</h5>
 <div id="signUp">
 <form action="signup.php" method="POST">
     <input type="text" name="firstName" placeholder="First name">
     <input type="text" name="lastName" placeholder="Last name">
-    <input type="email" name=email placeholder="email">
-    <input type="password" name=password placeholder="password">
-    <input id="submit" type=submit>
+    <input type="email" name=email placeholder="Email">
+    <input type="password" name=password placeholder="Password">
+    <input class="submit" type=submit value="Sign Up">
 </form>
-<button type="button" id="closeSignUp" onclick="closeSignUp()">Close</button>
+<h5 class="subtitle marginA black center"> Already have an account? </h5>
+<h5 id="openLogIn" class="white logIn center" onclick="openLogIn(), closeSignUp()">Log In</h5>
 </div>
 <?php 
 if (isset($_GET["signup"])){
@@ -40,14 +41,15 @@ if (isset($_GET["signup"])){
 ?>
 
 <h5 class="subtitle marginA"> Already have an account? </h5>
-<h5 id="openLogIn" onclick="openLogIn()">Log In</h5>
+<h5 id="openLogIn" class="white logIn" onclick="openLogIn()">Log In</h5>
 <div id="logIn">
 <form action="login.php" method="POST">
-    <input type="email" name=email placeholder="email">
-    <input type="password" name=password placeholder="password">
-    <input type=submit value=login>
+    <input type="email" class="marginB" name=email placeholder="Email">
+    <input type="password" class="marginC" name=password placeholder="Password">
+    <input class="submit" type=submit value="Log in">
 </form>
-<button type="button" id="closeLogIn" onclick="closeLogIn()">Close</button>
+<h5 class="subtitle marginA black center"> Don't have an account? </h5>
+<h5 class="subtitle center white" id="signUpButton" onclick="openSignUp(), closeLogIn()">Sign Up</h5>
 </div>
 
 </body>
