@@ -7,22 +7,6 @@ if (empty($_SESSION)){
     exit;
 }
 
-
-
-$sessionUserName = "$_SESSION[first_name]";
-$sqlTwo = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE first_name ='$sessionUserName'";
-$user = $mySQL->query($sqlTwo)->fetch_object();
-if ($user->title != NULL){
-    $nam = $_SESSION["first_name"] = $user->first_name;
-    $tit = $_SESSION["title"] = $user->title;
-    $des = $_SESSION["description"] = $user->description;
-    $dat = $_SESSION["date_added"] = $user->date_added;
-    $pic = $_SESSION["picture"] = $user->picture;
-    $cit = $_SESSION["city"] = $user->city;
-}
-else{
-    echo "no posts";
-}
 ?>
 <link rel="stylesheet" href="../css/main.css" type="text/css">
 <script src="../js/main.js"></script>
@@ -146,22 +130,59 @@ echo "<h1 class='soldCount'>$_SESSION[soldCount]</h1>"
 ?>
 <div class="borderBottom"></div>
 <?php
-// foreach loop
-if ($user->title != NULL){
-    echo "<div class='listing'>
-    <img src='$pic'>
-    <h1>$tit</h1>
-    <h2>$des</h2>
-    <h2>$nam</h2>
-    <h2>$dat</h2>
-    <h2>$cit</h2>
-    </div>";
-}
-else{
+// displaying the user posts
+$sessionUserId = "$_SESSION[userid]";
+$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE user_id ='$sessionUserId'";
+$user = $mySQL->query($sql)->fetch_object();
+if($user == NULL){
     echo "no posts";
 }
+else{
+        $nam = $_SESSION["first_name"] = $user->first_name;
+        $tit = $_SESSION["title"] = $user->title;
+        $des = $_SESSION["description"] = $user->description;
+        $dat = $_SESSION["date_added"] = $user->date_added;
+        $pic = $_SESSION["picture"] = $user->picture;
+        $cit = $_SESSION["city"] = $user->city;
+        echo "<div class='listing'>
+        <img src='$pic'>
+        <h1>$tit</h1>
+        <h2>$des</h2>
+        <h2>$nam</h2>
+        <h2>$dat</h2>
+        <h2>$cit</h2>
+        </div>";
+}
+
+class Post {
+    public static $postList = [];
+    private $name;
+
+    public function __construct($name) {
+        $this->name = $name; 
+        array_push(self::$postList, $this);
+    }
+    public function print() {
+        echo "$this->name";
+    }
+
+}
+
+$postArray = ["Jesper", "Wiktor", "Karoline"];
+
+foreach ($postArray as $x) {
+    $x = new Post($x);
+    
+}
+
+
+foreach(Post::$postList as $post) {
+    $post->print();
+}
+
 
 ?>
+
 
 
 

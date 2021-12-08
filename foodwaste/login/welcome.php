@@ -6,22 +6,25 @@
 <body>
 <link rel="stylesheet" href="../css/main.css" type="text/css">
 <script src="../js/main.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <div id="welcome">
-    <h5>Welcome to</h5>
+    <h1 class="subtitle">Welcome to</h1>
     <img id="welcomeLogo" src="../icons/MinMad.png">
-    <h5>Ready to help the environment?</h5>
-
+    <h1 class="subtitle">Ready to help the environment?</h1>
+    <img id="cooking" src="../icons/cooking.png">
 </div>
 
-<h2 id="openSignUp" onclick="openSignUp()">Signup</h2>
+<h5 id="openSignUp" onclick="openSignUp()">Sign Up</h5>
 <div id="signUp">
 <form action="signup.php" method="POST">
     <input type="text" name="firstName" placeholder="First name">
     <input type="text" name="lastName" placeholder="Last name">
     <input type="email" name=email placeholder="email">
     <input type="password" name=password placeholder="password">
-    <input type=submit>
+    <input id="submit" type=submit>
 </form>
 <button type="button" id="closeSignUp" onclick="closeSignUp()">Close</button>
 </div>
@@ -36,8 +39,8 @@ if (isset($_GET["signup"])){
 }
 ?>
 
-
-<h2 id="openLogIn" onclick="openLogIn()">Log In</h2>
+<h5 class="subtitle marginA"> Already have an account? </h5>
+<h5 id="openLogIn" onclick="openLogIn()">Log In</h5>
 <div id="logIn">
 <form action="login.php" method="POST">
     <input type="email" name=email placeholder="email">
