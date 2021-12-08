@@ -17,7 +17,7 @@
     <img id="cooking" src="../icons/cooking.png">
 </div>
 
-<h5 id="openSignUp" class="button" onclick="openSignUp()">Sign Up</h5>
+<p id="openSignUp" class="button" onclick="openSignUp()">Sign Up</p>
 <div id="signUp">
 <form action="signup.php" method="POST">
     <input type="text" name="firstName" placeholder="First name">
@@ -26,37 +26,37 @@
     <input type="password" name=password placeholder="Password">
     <input class="submit" type=submit value="Sign Up">
 </form>
-<h5 class="subtitle marginA black center"> Already have an account? </h5>
-<h5 id="openLogIn" class="white logIn center" onclick="openLogIn(), closeSignUp()">Log In</h5>
+<p class="subtitle marginA black center"> Already have an account? </p>
+<p id="openLogIn" class="white logIn center" onclick="openLogIn(), closeSignUp()">Log In</p>
 </div>
 <?php 
 if (isset($_GET["signup"])){
     if ($_GET["signup"]=="error"){
-        echo "<p>Something went wrong. Try again</p>";
+        echo "<p class='alert_red'>Something went wrong. Try again</p>";
     } 
     if ($_GET["signup"]=="succes"){
-        echo "<p>You did it now login!</p>";
+        echo "<p class='alert_green' onclick='openLogIn()'>You did it now login!</p>";
     } 
 }
 ?>
 
-<h5 class="subtitle marginA"> Already have an account? </h5>
-<h5 id="openLogIn" class="white logIn" onclick="openLogIn()">Log In</h5>
+<p class="subtitle marginA"> Already have an account? </p>
+<p id="openLogIn" class="white logIn" onclick="openLogIn()">Log In</p>
 <div id="logIn">
 <form action="login.php" method="POST">
     <input type="email" class="marginB" name=email placeholder="Email">
     <input type="password" class="marginC" name=password placeholder="Password">
     <input class="submit" type=submit value="Log in">
 </form>
-<h5 class="subtitle marginA black center"> Don't have an account? </h5>
-<h5 class="subtitle center white" id="signUpButton" onclick="openSignUp(), closeLogIn()">Sign Up</h5>
+<p class="subtitle marginA black center"> Don't have an account? </p>
+<p class="subtitle center white" id="signUpButton" onclick="openSignUp(), closeLogIn()">Sign Up</p>
 </div>
 
 </body>
 <?php 
 if (isset($_GET["signin"])){
     if ($_GET["signin"]=="error"){
-        echo "<p>wrong information</p>";
+        echo "<p class='alert_red'>Wrong login or password</p>";
     } 
 }
 

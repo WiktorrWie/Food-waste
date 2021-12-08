@@ -139,6 +139,21 @@ input{
     color: white;
     font-family: 'Nunito';
     width: 100%;
+    border: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px var(--gray) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 ::placeholder {
     color: white;
@@ -165,5 +180,28 @@ input{
 }
 
 .center{
+    text-align: center;
+}
+
+.alert_red{
+    position: absolute;
+    bottom: 500px;
+    font-size: 30pt;
+    background-color: #C6360A;
+    color: white;
+    padding: 39px 0px;
+    border-radius: 30pt;
+    width: 630px;
+    text-align: center;
+}
+.alert_green{
+    position: absolute;
+    bottom: 500px;
+    font-size: 30pt;
+    background-color: var(--green);
+    color: white;
+    padding: 39px 0px;
+    border-radius: 30pt;
+    width: 630px;
     text-align: center;
 }
