@@ -88,6 +88,7 @@ width: 200px;
     padding: 60px 80px;
     border-radius: 30px;
     width: 65%;
+    z-index: 2;
 }
 #logIn{
     display: none;
@@ -97,6 +98,7 @@ width: 200px;
     padding: 60px 80px;
     border-radius: 30px;
     width: 65%;
+    z-index: 2;
 }
 
 #welcomeLogo{
@@ -193,6 +195,7 @@ select:-webkit-autofill:focus {
     border-radius: 30pt;
     width: 630px;
     text-align: center;
+    z-index: 1;
 }
 .alert_green{
     position: absolute;
@@ -204,4 +207,123 @@ select:-webkit-autofill:focus {
     border-radius: 30pt;
     width: 630px;
     text-align: center;
+    z-index: 1;
+}
+
+
+ /* Home page */
+
+ /* Burger menu */
+ 
+.menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 10px;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    user-select: none;
+}
+
+.menu_item {
+    float: left;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.navicon {
+    background: #15243e;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.navicon:before,
+.navicon:after {
+    background: #15243e;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.navicon:before {
+    top: 5px;
+}
+
+.navicon:after {
+    top: -5px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menu-btn:checked ~ .menu {
+    display: block;
+    height: 200px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+.dropdown_menu {
+    display: none;
+    position: relative;
+    align-items: center;
+    transition-duration: 1s;
+}
+
+.dropdown_menu {
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav_link {
+    text-decoration: none;
+    color: #15243e;
+}
+
+.nav_link:hover {
+    opacity: 0.5
+}
+
+.border {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 6px;
+    border-radius: 8px;
+    padding: 2px 6px 2px 6px;
+}
+
+.border:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5
+}
+
+h3:hover {
+    opacity: 0.5
+}
+
+.menu-btn:checked ~ .dropdown_menu {
+    display: flex;
 }
