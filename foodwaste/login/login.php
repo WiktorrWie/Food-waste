@@ -22,6 +22,7 @@ if(isset($_POST)){
         
 
         $_SESSION["first_name"] = $user->first_name;
+        $_SESSION["last_name"] = $user->last_name;
         $_SESSION["userid"] = $user->id;
         $_SESSION["review_score"] = $user->review_score;
         $_SESSION["profile_picture"] = $user->profile_picture;

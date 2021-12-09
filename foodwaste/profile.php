@@ -17,7 +17,7 @@ if (empty($_SESSION)){
 <div>
 <?php
 if("$_SESSION[profile_picture]" == NULL){
-    echo "<img class='userImage' src='./icons/user.png'>";
+    echo "<img class='userImage' src='./icon/user.png'>";
 }
 else{
     echo "<img class='userImage' src='$_SESSION[profile_picture]'>";
@@ -59,7 +59,7 @@ else{
 }
 ?>
 
-<img class="changePhoto" src="./icons/camera.png">
+<img class="changePhoto" src="./icon/camera.png">
 
 </div>
 <div id="reviewScore"></div>
@@ -69,63 +69,63 @@ echo "<h1>$_SESSION[first_name]</h1>";
 $reviewScore = "$_SESSION[review_score]";
 if($reviewScore > 0 && $reviewScore < 1.5){
     echo "<div class='stars'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
     </div>";
 }
 else if($reviewScore >= 1.5 && $reviewScore < 2.5){
     echo "<div class='stars'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
     </div>";
 }
 else if($reviewScore >= 2.5 && $reviewScore < 3.5){
     echo "<div class='stars'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
     </div>";
 }
 else if($reviewScore >= 3.5 && $reviewScore < 4.5){
     echo "<div class='stars'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star.png'>
     </div>";
 }
 else if($reviewScore >= 4.5){
     echo "<div class='stars'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
-    <img class='star' src='./icons/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
+    <img class='star' src='./icon/star-full.png'>
     </div>";
 }
 else{
     echo "<div class='stars'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
-    <img class='star' src='./icons/star.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
+    <img class='star' src='./icon/star.png'>
     </div>";
 }
 ?>
 
 <div class="borderBottom"></div>
 <h1>Meals saved from waste</h1>
-<img class="plate" src="./icons/plate.png">
+<img class="plate" src="./icon/plate.png">
 
 
 <?php
@@ -160,7 +160,7 @@ class Posts {
 }
 //SQL stuff
 
-$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = $_SESSION[userid];";
+$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = '$_SESSION[userid]'";
 $result = $mySQL->query($sql);
 
 
