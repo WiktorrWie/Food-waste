@@ -1,5 +1,5 @@
 <?php
-include("./database/database.php");
+require("database/database.php");
 session_start();
 
 if (empty($_SESSION)){
@@ -22,6 +22,7 @@ if("$_SESSION[profile_picture]" == NULL){
 else{
     echo "<img class='userImage' src='$_SESSION[profile_picture]'>";
 }
+
 if (!empty($_POST)){
 $file = $_FILES["fileToUpload"];
 $targetFolder = "../images/profile/";
@@ -125,59 +126,51 @@ else{
 <div class="borderBottom"></div>
 <h1>Meals saved from waste</h1>
 <img class="plate" src="./icons/plate.png">
+
+
 <?php
 echo "<h1 class='soldCount'>$_SESSION[soldCount]</h1>"
 ?>
 <div class="borderBottom"></div>
 <?php
 // displaying the user posts
-$sessionUserId = "$_SESSION[userid]";
-$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE user_id ='$sessionUserId'";
-$user = $mySQL->query($sql)->fetch_object();
-if($user == NULL){
-    echo "no posts";
-}
-else{
-        $nam = $_SESSION["first_name"] = $user->first_name;
-        $tit = $_SESSION["title"] = $user->title;
-        $des = $_SESSION["description"] = $user->description;
-        $dat = $_SESSION["date_added"] = $user->date_added;
-        $pic = $_SESSION["picture"] = $user->picture;
-        $cit = $_SESSION["city"] = $user->city;
-        echo "<div class='listing'>
-        <img src='$pic'>
-        <h1>$tit</h1>
-        <h2>$des</h2>
-        <h2>$nam</h2>
-        <h2>$dat</h2>
-        <h2>$cit</h2>
-        </div>";
-}
 
-class Post {
+//CLASS object with static list of all of its kind
+
+class Posts {
     public static $postList = [];
-    private $name;
 
-    public function __construct($name) {
-        $this->name = $name; 
-        array_push(self::$postList, $this);
+    //Class constructor
+    public function __construct() {
+        self::$postList[]= $this;
     }
+
+    //Print function for printing the information. 
     public function print() {
-        echo "$this->name";
+        echo "<div>
+        <h1>$this->title</h1>
+        <h2>$this->first_name</h2>
+        <h2>$this->date_added</h2>
+        <h2>$this->picture</h2>
+        <h2>$this->city</h2>
+        </div>"
+        ;
     }
 
 }
+//SQL stuff
 
-$postArray = ["Jesper", "Wiktor", "Karoline"];
-
-foreach ($postArray as $x) {
-    $x = new Post($x);
-    
-}
+$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = $_SESSION[userid];";
+$result = $mySQL->query($sql);
 
 
-foreach(Post::$postList as $post) {
-    $post->print();
+if (mysqli_num_rows($result) == 0) { 
+   echo "<p> No active posts</p>";
+} else {
+    while($row = mysqli_fetch_object($result, "Posts"))
+    {
+        $row->print();
+    }
 }
 
 
