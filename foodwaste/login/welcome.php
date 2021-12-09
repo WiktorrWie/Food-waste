@@ -12,9 +12,9 @@
 
 <div id="welcome">
     <h1 class="subtitle">Welcome to</h1>
-    <img id="welcomeLogo" src="../icons/MinMad.png">
+    <img id="welcomeLogo" src="../icon/MinMad.png">
     <h1 class="subtitle">Ready to help the environment?</h1>
-    <img id="cooking" src="../icons/cooking.png">
+    <img id="cooking" src="../icon/cooking.png">
 </div>
 
 <p id="openSignUp" class="button" onclick="openSignUp()">Sign Up</p>

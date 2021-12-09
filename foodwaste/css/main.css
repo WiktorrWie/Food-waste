@@ -11,6 +11,7 @@ body{
     flex-direction: column;
     align-items: center;
     font-family: 'Nunito';
+    margin: 0px;
 }
 
 /* Profile page */
@@ -212,6 +213,22 @@ select:-webkit-autofill:focus {
 
 
  /* Home page */
+.logo{
+    width: 280px;
+    cursor: pointer;
+    margin: 10px 0px 0px 10px;
+
+}
+
+.header{
+    width: 100%;
+    height: 140px;
+    background-color: var(--green);
+}
+
+.mainButton{
+    font-size: 40pt;
+}
 
  /* Burger menu */
  
@@ -221,43 +238,49 @@ select:-webkit-autofill:focus {
     float: right;
     padding: 10px;
     position: absolute;
+    z-index: 3;
     right: 30px;
     top: 40px;
     user-select: none;
+    margin-top: 20px;
 }
 
 .menu_item {
     float: left;
     padding: 0px;
     list-style-type: none;
+    padding: 10px 15px;
+    margin: 20px;
 }
 
 .navicon {
-    background: #15243e;
+    background: white;
     display: block;
-    height: 2px;
+    height: 8px;
     position: relative;
     transition: background .2s ease-out;
-    width: 18px;
+    width: 72px;
+    border-radius: 10px;
 }
 
 .navicon:before,
 .navicon:after {
-    background: #15243e;
+    background: white;
     content: '';
     display: block;
     height: 100%;
     position: absolute;
     transition: all .2s ease-out;
     width: 100%;
+    border-radius: 10px;
 }
 
 .navicon:before {
-    top: 5px;
+    top: 20px;
 }
 
 .navicon:after {
-    top: -5px;
+    top: -20px;
 }
 
 .menu-btn {
@@ -288,20 +311,31 @@ select:-webkit-autofill:focus {
 
 .dropdown_menu {
     display: none;
-    position: relative;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
     align-items: center;
     transition-duration: 1s;
-}
-
-.dropdown_menu {
     flex-direction: column;
     margin: 0px;
     padding: 0px;
+    background-color: var(--gray);
+    width: 100%;
+    height: 100%;
 }
 
 .nav_link {
     text-decoration: none;
-    color: #15243e;
+    color: white;
+    font-size: 40pt;
+}
+
+.logOut{
+    text-decoration: none;
+    color: white;
+    font-size: 40pt;
+    padding: 0px;
+    margin: 0px;
 }
 
 .nav_link:hover {

@@ -5,7 +5,6 @@ if (empty($_SESSION)){
     header("location: login/welcome.php");
     exit;
 }
-echo "<h3>Hey $_SESSION[first_name]</h3>";
 
 ?>
 
@@ -17,34 +16,45 @@ echo "<h3>Hey $_SESSION[first_name]</h3>";
 
 <body>
 <div class="header">
-            <a href="index.html" class="nav_link logo"><img src="./icons/MinMad.png" alt="logo" class="logo"></a>
 
+            <a href="index.php" class="nav_link logo"><img src="./icon/MinMad.png" alt="logo" class="logo"></a>
             <input class="menu-btn" type="checkbox" id="menu-btn">
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="dropdown_menu">
                 <li class="menu_item"><a href="" class="nav_link">
-                        <h2 class="">Home</h2>
+                    <img src="."
+                        Home
                     </a></li>
 
                 <li class="menu_item"><a href="" class="nav_link">
-                        <h2 class="">Chat</h2>
+                        Chat
                     </a>
                 </li>
 
                 <li class="menu_item"><a href="profile.php" class="nav_link">
-                        <h2 class="">Profile</h2>
+                        Profile
                     </a>
                 </li>
 
                 <li class="menu_item"><a href="" class="nav_link">
                     <form action="logout.php" method="GET">
-                        <input name="logout "type=submit value="log-out">
+                        <input class="logOut" name="logout" type=submit value="Log out">
                     </form>
                     </a>
                 </li>
             </ul>
 
         </div>
-        <a href=addPost.php>Create post </a>
+        <div class="mainButtons">
+            <div class="mainGreen">
+                <p class="subtitle">You have excess food?</p>
+                <a href=addPost.php class="mainButton">Create post</a>
+            </div>
+            
+            <div class="mainWhite">
+                <p class="subtitle">You want to find free food?</p>
+                <a href=map.php class="mainButton">Check map</a>
+            </div>
+        </div>
 
 </body>
