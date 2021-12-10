@@ -60,11 +60,16 @@ if (empty($_SESSION)){
         //Print function for printing the information. 
         public function print() {
             echo "<div class='listing'>
-            <h1>$this->title</h1>
-            <h2>$this->first_name</h2>
-            <h2>$this->date_added</h2>
             <img class='listingImage' src='$this->picture'>
-            <h2>$this->city</h2>
+            <div class='listingText'>
+            <h1 class='title'>$this->title</h1>
+            <p class='description'>";
+            //predefined PHP function limits number of characters to 60
+            echo substr($this->description, 0, 60);
+            echo "...</p>
+            <h2 class='nameDate'>$this->first_name - $this->date_added</h2>
+            </div>
+            <h2 class='city'>$this->city</h2>
             </div>"
             ;
         }
