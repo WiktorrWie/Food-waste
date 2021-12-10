@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 session_start();
 
@@ -13,64 +14,22 @@ if (empty($_SESSION)){
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap" rel="stylesheet">
-
+<html>
 <body>
-<div class="header">
+    <?php include('header.php'); ?>  
 
-            <a href="index.php" class="nav_link logo"><img src="./icon/MinMad.png" alt="logo" class="logo"></a>
-            <input class="menu-btn" type="checkbox" id="menu-btn">
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <div class="dropdown_menu">
-            <div class="menu_user">
-                <img class="profile_icon" src="./icon/user.png">
-                <p class="profile_name">
-                    <?php
-                        echo "$_SESSION[first_name] $_SESSION[last_name]";
-                    ?>
-                </p>
-            </div>
-            <div class="borderBottom">
 
-            </div>
-            <ul class="menu_list">
-                <li class="menu_item"><a href="" class="nav_link">
-                    <img class="menu_item_icon" src="./icon/home.png">
-                        Home
-                    </a></li>
-
-                <li class="menu_item"><a href="" class="nav_link">
-                    <img class="menu_item_icon" src="./icon/chat.png">
-                        Chat
-                    </a>
-                </li>
-
-                <li class="menu_item"><a href="profile.php" class="nav_link">
-                    <img class="menu_item_icon" src="./icon/profile.png">
-                        Profile
-                    </a>
-                </li>
-
-                <li class="menu_item bottom"><a href="" class="nav_link">
-                    <img class="menu_item_icon" src="./icon/log-out.png">
-                    <form action="logout.php" method="GET" class="no_margin">
-                        <input class="log_out" name="logout" type=submit value="Log out">
-                    </form>
-                    </a>
-                </li>
-            </ul>
-            </div>
-
+    <div class="mainButtons">
+        <div class="mainGreen">
+            <p class="subtitle">You have excess food?</p>
+            <a href=addPost.php class="mainButton">Create post</a>
         </div>
-        <div class="mainButtons">
-            <div class="mainGreen">
-                <p class="subtitle">You have excess food?</p>
-                <a href=addPost.php class="mainButton">Create post</a>
-            </div>
             
-            <div class="mainWhite">
-                <p class="subtitle">You want to find free food?</p>
-                <a href=map.php class="mainButton">Check map</a>
-            </div>
+        <div class="mainWhite">
+            <p class="subtitle">You want to find free food?</p>
+            <a href=map.php class="mainButton">Check map</a>
         </div>
+    </div>
 
 </body>
+</html>
