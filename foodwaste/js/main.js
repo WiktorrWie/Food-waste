@@ -13,4 +13,13 @@ function openLogIn() {
 function closeLogIn() {
     document.getElementById("logIn").style.display = "none";
 }
+
+// Map
+
+function closeMap() {
+    document.getElementById("map").style.display = "none";
+}
   
+function openMap() {
+    document.getElementById("map").style.display = "flex";
+}

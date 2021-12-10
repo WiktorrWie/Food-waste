@@ -22,20 +22,22 @@ if (empty($_SESSION)){
 
 
     <div class="mainButtons">
+        <a href=addPost.php class="decoration">
         <div class="mainGreen">
             <img class="mainIcon" src="./icon/to-do-list.png">
             <div class="mainText">
                 <p class="mainMargin">You have excess food?</p>
-                <a href=addPost.php class="mainButton textWhite">Create post</a>
+                <p class="mainButton textWhite">Create post</p>
             </div>
             <img class="mainIconNext" src="./icon/next-white.png">
-        </div>
-            
-        <div class="mainWhite">
+        </div> 
+        </a> 
+
+        <div class="mainWhite" onclick="openMap()">
             <img class="mainIcon" src="./icon/location.png">
             <div class="mainText">
                 <p class="mainMargin">You want to find food?</p>
-                <a href=map.php class="mainButton textBlack">Check map</a>
+                <p class="mainButton textBlack">Check map</p>
             </div>
             <img class="mainIconNext" src="./icon/next-black.png">
         </div>
@@ -75,7 +77,7 @@ if (empty($_SESSION)){
         }
         }
         //Changed select takes all posts
-        $sql = "SELECT * FROM activeposts;";
+        $sql = "SELECT * FROM activeposts ORDER BY date_added DESC;";
         $result = $mySQL->query($sql);
 
         if (mysqli_num_rows($result) == 0) { 
@@ -89,6 +91,9 @@ if (empty($_SESSION)){
 
         ?>
     </div>
-
-</body>
+    <div id="map">
+    <button id="closeMap" onclick="closeMap()">Close map</button>
+    <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/wiktorrwie/ckx0u00a22c0j14pc09k1xcf7.html?title=false&access_token=pk.eyJ1Ijoid2lrdG9ycndpZSIsImEiOiJjazdkMWI0OXYwamFyM2ZwYWtnN3h1cWM4In0.XF6ccwQBjTFA1NLSmPaGxA&zoomwheel=false#11.71/56.1507/10.2252" title="Basic" style="border:none;"></iframe>
+    </div>
+    </body>
 </html>

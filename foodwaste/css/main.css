@@ -401,6 +401,11 @@ h3:hover {
 .mainButton{
     font-size: 40pt;
     text-decoration: none;
+    margin: 0px;
+}
+
+.decoration{
+    text-decoration: none;
 }
 
 .mainGreen{
@@ -469,6 +474,12 @@ h3:hover {
     width: 90%;
 }
 
+.listingsText{
+    font-size: 40pt;
+    font-weight: 500;
+    margin: 120px 0px 0px 0px;
+}
+
 .listingImage{
     width: 180px;
     height: 180px;
@@ -513,4 +524,23 @@ h3:hover {
     margin: 0px;
     font-size: 22pt;
     font-weight: 500;
+}
+
+#map{
+    position: absolute;
+    width: 90%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#closeMap{
+    font-size: 30pt;
+    margin-bottom: 20px;
+    background-color: var(--green);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
 }
