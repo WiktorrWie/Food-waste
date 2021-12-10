@@ -211,26 +211,7 @@ select:-webkit-autofill:focus {
     z-index: 1;
 }
 
-
- /* Home page */
-.logo{
-    width: 280px;
-    cursor: pointer;
-    margin: 10px 0px 0px 10px;
-
-}
-
-.header{
-    width: 100%;
-    height: 140px;
-    background-color: var(--green);
-}
-
-.mainButton{
-    font-size: 40pt;
-}
-
- /* Burger menu */
+/* Burger menu */
  
 .menu-icon {
     cursor: pointer;
@@ -400,4 +381,91 @@ h3:hover {
 .bottom{
     position: relative;
     bottom: -900px;
+}
+
+
+ /* Home page */
+.logo{
+    width: 280px;
+    cursor: pointer;
+    margin: 10px 0px 0px 10px;
+
+}
+
+.header{
+    width: 100%;
+    height: 150px;
+    background-color: var(--green);
+}
+
+.mainButton{
+    font-size: 40pt;
+    text-decoration: none;
+}
+
+.mainGreen{
+    background-color: var(--green);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 240px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.mainWhite{
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 240px;
+    border-radius: 0px 0px 30px 30px;
+    border-top: 2px solid black;
+}
+ 
+.mainMargin{
+    margin: 20px 0px 0px 0px;
+    font-size: 25pt;
+    font-weight: 400;
+}
+
+.mainIcon{
+    width: 95px;
+    height: 95px;
+}
+
+.mainIconNext{
+    width: 60px;
+    height: 60px;
+}
+
+.mainButtons{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.mainText{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.textBlack{
+    color: black;
+}
+
+.textWhite{
+    color: white;
+}
+
+.listingImage{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }

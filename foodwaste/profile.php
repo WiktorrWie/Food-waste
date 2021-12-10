@@ -160,7 +160,7 @@ class Posts {
 }
 //SQL stuff
 
-$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = '$_SESSION[userid]'";
+$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = $_SESSION[userid];";
 $result = $mySQL->query($sql);
 
 
