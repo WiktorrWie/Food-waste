@@ -5,6 +5,7 @@
 
 <body>
 <link rel="stylesheet" href="../css/main.css" type="text/css">
+<link rel="stylesheet" href="../css/welcome_input.css" type="text/css">
 <script src="../js/main.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

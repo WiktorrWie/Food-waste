@@ -22,13 +22,13 @@
         </div>
         <ul class="menu_list">
             <li class="menu_item">
-                <a href="" class="nav_link">
+                <a href="index.php" class="nav_link">
                     <img class="menu_item_icon" src="./icon/home.png">
                         Home
                 </a></li>
 
             <li class="menu_item">
-                <a href="" class="nav_link">
+                <a href="chat.php" class="nav_link">
                     <img class="menu_item_icon" src="./icon/chat.png">
                         Chat
                 </a>

@@ -13,8 +13,8 @@ if (empty($_SESSION)){
 
 <body>
 <?php include('header.php'); ?> 
-<h1> My profile <h1>
-<div class="border-bottom"></div>
+<h1> My profile </h1>
+<div class="borderBottom marginD"></div>
 <div>
 <?php
 if("$_SESSION[profile_picture]" == NULL){
@@ -124,7 +124,7 @@ else{
 }
 ?>
 
-<div class="borderBottom"></div>
+<div class="borderBottom marginD"></div>
 <h1>Meals saved from waste</h1>
 <img class="plate" src="./icon/plate.png">
 
@@ -132,7 +132,7 @@ else{
 <?php
 echo "<h1 class='soldCount'>$_SESSION[soldCount]</h1>"
 ?>
-<div class="borderBottom"></div>
+<div class="borderBottom marginD"></div>
 <?php
 // displaying the user posts
 

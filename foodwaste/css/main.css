@@ -32,8 +32,12 @@ body{
 
 .borderBottom{
     border-bottom: 2px solid #fff;
-    width: 80%;
+    width: 90%;
     margin: 100px 0px 60px 0px;
+}
+
+.fullWidth{
+    width: 100%;
 }
 
 .star{
@@ -132,36 +136,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-
-input{
-    font-size: 24pt;
-    padding: 10px 15px;
-    margin: 20px;
-    border-radius: 20px;
-    background-color: var(--gray);
-    color: white;
-    font-family: 'Nunito';
-    width: 100%;
-    border: none;
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: none;
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px var(--gray) inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
-::placeholder {
-    color: white;
-    opacity: 1; 
-  }
 
 .submit{
     font-size: 40pt;
@@ -348,6 +322,10 @@ select:-webkit-autofill:focus {
     font-size: 40pt;
     padding: 0px;
     margin: 0px;
+    background-color: var(--gray);
+    font-family: 'Nunito';
+    width: 100%;
+    border: none;
 }
 
 .nav_link:hover {
@@ -381,6 +359,10 @@ h3:hover {
 .bottom{
     position: relative;
     bottom: -900px;
+}
+
+.marginD{
+    margin: 50px 0px 50px 0px;;
 }
 
 
@@ -543,4 +525,56 @@ h3:hover {
     border-radius: 20px;
     border: none;
     text-align: center;
+}
+
+/* Chat */
+
+.content{
+    width: 90%;
+}
+
+.pageName{
+    font-size: 40pt;
+    font-weight: 500;
+}
+
+/* Add Post */
+
+.postInput{
+font-size: 26pt;
+width: 94%;
+padding: 2% 3%;
+margin: 5px;
+border-radius: 20px;
+font-family: 'Nunito';
+font-weight: 700;
+}
+
+.uploadLabel{
+    font-size: 26pt;
+    margin-top: 40px;
+}
+
+.fileUpload{
+    font-size: 26pt;
+    padding: 0px;
+    font-weight: 500;
+    width: 480px;
+}
+
+input[type=file]::file-selector-button {
+    padding: 17px 26px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+  
+.submitPost{
+    font-size: 40pt;
+    color: white;
+    background-color: var(--green);
+    padding: 30px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 40px;
+    width: 60%;
 }
