@@ -36,10 +36,10 @@ else{
 
 <!---
 <form action="upload/addProfilePic.php" method="post" enctype="multipart/form-data">
-<input class="postInput fileUpload" required type="file" name="pictureToUpload" id="upload" hidden>
+<input class="postInput fileUpload" required type="file" name="pictureToUpload" id="upload" hidden/>
 <label for="upload">
-<img class="changePhoto" for="upload" src="./icon/camera.png">
-<input class="submitPost" type=submit value="Post">
+<img class="changePhoto" for="upload" src="./icon/camera.png" onclick="showSubmit()">
+<input class="submitPost" id="profilePicSubmit" type=submit value="Post">
 </label>
 </form>
 -->

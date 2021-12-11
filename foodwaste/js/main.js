@@ -26,3 +26,6 @@ function openMap() {
 
 // Listing
 
+function showSubmit() {
+    document.getElementById("profilePicSubmit").style.display = "block";
+}

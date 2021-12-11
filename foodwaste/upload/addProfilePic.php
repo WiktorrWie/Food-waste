@@ -11,6 +11,7 @@ require("../database/database.php");
 if (!empty($_FILES["fileToUpload"])){
     $file = $_FILES["fileToUpload"];
     $targetFolder = "../images/profile/";
+
     $fileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
     $fileName = $_SESSION["first_name"].time().".".$fileType;
     
@@ -26,8 +27,8 @@ if (!empty($_FILES["fileToUpload"])){
             if($mySQL->query($sql) === true){
                  header("location: ../profile.php?post=succes");
                 exit;
-                }
             }
+        }
         else{
             header("location: ../profile.php?error=large");
             exit;

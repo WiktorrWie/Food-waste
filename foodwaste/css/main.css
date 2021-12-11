@@ -68,6 +68,12 @@ width: 200px;
     margin: 20px 0px 0px 0px;
 }
 
+#profilePicSubmit{
+    display: none;
+    width: 300px;
+    margin-top: 0px;
+}
+
 /* Welcome page */
 
 #cooking{
@@ -205,7 +211,6 @@ align-items: center;
 .menu-icon {
     cursor: pointer;
     display: inline-block;
-    float: right;
     padding: 10px;
     position: absolute;
     z-index: 3;
