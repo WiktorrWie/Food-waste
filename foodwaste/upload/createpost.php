@@ -7,6 +7,7 @@ $file = $_FILES["fileToUpload"];
 $title = $_POST["title"];
 $description = $_POST["description"];
 $city = $_POST["city"];
+$contact = $_POST["contact"];
 
 $targetFolder = "../images/posts/";
 $fileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
@@ -21,7 +22,7 @@ if ($fileType == "png" || $fileType == "jpg" || $fileType == "jpeg") {
         $picture = "images/posts/". $fileName;
         //saving post into database. 
         //CALL addPost (userid, "title", "description", "image", "city");
-        $sql= "CALL addPost('$_SESSION[userid]', '$title', '$description', '$picture', '$city')";
+        $sql= "CALL addPost('$_SESSION[userid]', '$title', '$description', '$picture', '$city', '$contact')";
         
         if($mySQL->query($sql) === true){
              header("location: ../index.php?post=succes");

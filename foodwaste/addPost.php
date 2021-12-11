@@ -29,6 +29,8 @@ if (empty($_SESSION)){
         <br>
         <input class="postInput" required type="text" name="city" placeholder = "City">
         <br>
+        <input class="postInput" required type="text" name="contact" placeholder = "Contact number or other form">
+        <br>
         <label class="uploadLabel">Upload picture (Max 2MB)</label>
         <br>
         <input class="postInput fileUpload" required type="file" name="fileToUpload">
