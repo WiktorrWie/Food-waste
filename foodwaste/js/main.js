@@ -28,4 +28,7 @@ function openMap() {
 
 function showSubmit() {
     document.getElementById("profilePicSubmit").style.display = "block";
+    document.getElementById("profilePicLabel").style.display = "block";
+    document.getElementById("profilePicForm").style.position = "relative";
+    document.getElementById("changePhoto").style.display = "none";
 }

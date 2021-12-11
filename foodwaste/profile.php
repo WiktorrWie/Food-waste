@@ -15,7 +15,7 @@ if (empty($_SESSION)){
 <?php include('header.php'); ?> 
 <h1 class="pageName"> My profile </h1>
 <div class="borderBottom marginF"></div>
-<div>
+<div class="profilePic">
 <?php
 if("$_SESSION[profile_picture]" == NULL){
     echo "<img class='userImage' src='./icon/user.png'>";
@@ -24,30 +24,24 @@ else{
     echo "<img class='userImage' src='$_SESSION[profile_picture]'>";
 }
 ?>
-    <form name="pictureUpload" action="upload/addProfilePic.php" method ="POST" enctype="multipart/form-data">
-         <label class="uploadLabel">Upload picture (Max 2MB)</label>
+    <form name="pictureUpload" id="profilePicForm" action="upload/addProfilePic.php" method ="POST" enctype="multipart/form-data">
         <br>
-        <input class="postInput fileUpload" required type="file" name="fileToUpload">
+        <input class="postInput fileUpload" required type="file" name="fileToUpload" id="upload" hidden/>
         <br>
-        <input class="submitPost" type=submit value="Post">
+    <label class="labelCenter" for="upload">
+    <img id="changePhoto" for="upload" src="./icon/camera.png" onclick="showSubmit()">
+    <input class="submitPost" id="profilePicSubmit" type=submit value="Post">
+    <label class="uploadLabel" id="profilePicLabel">Upload picture (Max 2MB)</label>
+    </label>
     </form>
 
-
-
-<!---
-<form action="upload/addProfilePic.php" method="post" enctype="multipart/form-data">
-<input class="postInput fileUpload" required type="file" name="pictureToUpload" id="upload" hidden/>
-<label for="upload">
-<img class="changePhoto" for="upload" src="./icon/camera.png" onclick="showSubmit()">
-<input class="submitPost" id="profilePicSubmit" type=submit value="Post">
-</label>
-</form>
--->
 </div>
 <div id="reviewScore"></div>
 
 <?php
-echo "<h1>$_SESSION[first_name]</h1>";
+echo "<h1>$_SESSION[first_name] $_SESSION[last_name]</h1>";
+
+echo "<h1>Feedback</h1>";
 
 $reviewScore = "$_SESSION[review_score]";
 if($reviewScore > 0 && $reviewScore < 1.5){
@@ -144,7 +138,8 @@ class Posts {
                 echo "...</p>
                 <h2 class='nameDate'>$this->first_name - $this->date_added</h2>
             </div>
-            <h2 class='city'>$this->city</h2>
+                <h2 class='city'>$this->city</h2>
+                <img id='deleteListing' src='./icon/close-black.png'>
         </div>";
     }
 }
@@ -162,6 +157,32 @@ if (mysqli_num_rows($result) == 0) {
     }
 }
 
+
+    //Deleting posts//
+
+
+    if(isset($_POST['delete'])){
+        $id = $_POST['deletePost'];  
+        $query = "UPDATE posts SET active=0 WHERE id=$id"; 
+        $result = $mySQL->query($query);
+     }
+ 
+     $query = "SELECT * FROM posts WHERE userid=$_SESSION[userid] AND active=1;";
+     $result = $mySQL->query($query); 
+     while ($row = mysqli_fetch_array($result)) { 
+             $id = $row['id'];
+             $title = $row['title'];
+
+         ?>
+
+            <form id="delete" method="post" action="">
+            <input type="hidden" name="deletePost" value="<?php print $id; ?>"/> 
+            <input type="submit" name="delete" value="Delete!"/>    
+ 
+            </form>
+         <?php
+    }   
+ 
 
 ?>
 </div>

@@ -19,15 +19,14 @@ body{
 .userImage{
     width: 200px;
     border-radius: 50%;
-    margin-left: 60px;
 }
 
-.changePhoto{
+#changePhoto{
     width: 60px;
     border-radius: 50%;
-    position: relative;
-    top: -120px;
-    left: -30px;
+    position: absolute;
+    top: 0px;
+    left: 50px;
 }
 
 .borderBottom{
@@ -72,6 +71,39 @@ width: 200px;
     display: none;
     width: 300px;
     margin-top: 0px;
+}
+
+#profilePicLabel{
+    display: none;
+}
+
+#profilePicForm{
+    position: absolute;
+}
+
+.profilePic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labelCenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#deleteListing{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.listingEnd{
+    display: flex;
+    flex-direction: column;
 }
 
 /* Welcome page */
@@ -329,11 +361,13 @@ align-items: center;
 .profile_icon{
     width: 130px;
     margin-right: 50px;
+    border-radius: 50%;
 }
 
 .profile_name{
     font-size: 25pt;
-
+    display: flex;
+    align-items: center;
 }
 
 .log_out{
@@ -487,6 +521,7 @@ h3:hover {
     height: 180px;
     object-fit: cover;
     border-radius: 30px;
+    box-shadow: 0px 5px 10px 3px #808080;
 }
 
 .listing{
@@ -601,6 +636,9 @@ input[type=file]::file-selector-button {
     width: 60%;
 }
 
+textarea{
+    resize: none;
+}
 /* Clicked listing */
 
 .listingUserImage{

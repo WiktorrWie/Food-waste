@@ -10,10 +10,17 @@
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <div class="dropdown_menu">
         <div class="menu_user">
-            <img class="profile_icon" src="./icon/user.png">
+            <?php
+            if("$_SESSION[profile_picture]" == NULL){
+                echo "<a href='profile.php'><img class='profile_icon' src='./icon/user.png'></a>";
+            }
+            else{
+                echo "<a href='profile.php'><img class='profile_icon' src='$_SESSION[profile_picture]'></a>";
+            }
+            ?>
             <p class="profile_name">
                 <?php
-                    echo "$_SESSION[first_name] $_SESSION[last_name]";
+                    echo "<a href='profile.php' class='decoration white'>$_SESSION[first_name] $_SESSION[last_name]</a>";
                 ?>
             </p>
         </div>

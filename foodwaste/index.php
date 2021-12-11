@@ -78,6 +78,7 @@ if (empty($_SESSION)){
             echo substr($this->description, 0, 60);
             echo "...</p>
             <h2 class='nameDate'>$this->first_name - $this->date_added</h2>
+            <h2 class='nameDate'> $this->contact </h2>
             </div>
             <h2 class='city'>$this->city</h2>
             </div>"
