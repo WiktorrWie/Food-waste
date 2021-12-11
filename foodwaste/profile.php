@@ -12,6 +12,7 @@ if (empty($_SESSION)){
 <script src="../js/main.js"></script>
 
 <body>
+<?php include('header.php'); ?> 
 <h1> My profile <h1>
 <div class="border-bottom"></div>
 <div>
