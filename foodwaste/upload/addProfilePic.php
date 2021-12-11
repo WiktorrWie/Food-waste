@@ -4,12 +4,16 @@ require("../database/database.php");
 
 //changing profile picture
 
-if (!empty($_POST)){
-    $file = $_FILES["pictureToUpload"];
+
+
+
+
+if (!empty($_FILES["fileToUpload"])){
+    $file = $_FILES["fileToUpload"];
     $targetFolder = "../images/profile/";
     $fileType = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
     $fileName = $_SESSION["first_name"].time().".".$fileType;
-    var_dump($file);
+    
     
     //file upload plus validation
     if ($fileType == "png" || $fileType == "jpg" || $fileType == "jpeg") {
@@ -18,8 +22,7 @@ if (!empty($_POST)){
             $picture = "images/profile/". $fileName;
             //saving photo into database. 
             //CALL addPicture (profile_picture);
-            $sql= "CALL addPicture('$_SESSION[userid]', '$profile_picture');";
-            
+            $sql= "CALL addPicture($_SESSION[userid], '$picture');";
             if($mySQL->query($sql) === true){
                  header("location: ../profile.php?post=succes");
                 exit;
@@ -41,7 +44,7 @@ if (!empty($_POST)){
 else{
     echo "nope";
 }
-        
+
         
 ?>
         

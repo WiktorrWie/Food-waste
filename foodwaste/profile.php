@@ -24,7 +24,17 @@ else{
     echo "<img class='userImage' src='$_SESSION[profile_picture]'>";
 }
 ?>
+    <form name="pictureUpload" action="upload/addProfilePic.php" method ="POST" enctype="multipart/form-data">
+         <label class="uploadLabel">Upload picture (Max 2MB)</label>
+        <br>
+        <input class="postInput fileUpload" required type="file" name="fileToUpload">
+        <br>
+        <input class="submitPost" type=submit value="Post">
+    </form>
 
+
+
+<!---
 <form action="upload/addProfilePic.php" method="post" enctype="multipart/form-data">
 <input class="postInput fileUpload" required type="file" name="pictureToUpload" id="upload" hidden>
 <label for="upload">
@@ -32,7 +42,7 @@ else{
 <input class="submitPost" type=submit value="Post">
 </label>
 </form>
-
+-->
 </div>
 <div id="reviewScore"></div>
 
