@@ -132,12 +132,15 @@ else{
 <?php
 echo "<h1 class='soldCount'>$_SESSION[soldCount]</h1>"
 ?>
-<div class="borderBottom marginD"></div>
+<div class="borderBottom marginE"></div>
+
+<div class="listings">
+        <div class="listingsHeader">
+            <h4 class="profileListingsText">My listings</h4>
+        </div>
 <?php
-// displaying the user posts
-
-//CLASS object with static list of all of its kind
-
+// Displaying the user posts
+// CLASS object with static list of all of its kind
 class Posts {
     public static $postList = [];
 
@@ -148,19 +151,22 @@ class Posts {
 
     //Print function for printing the information. 
     public function print() {
-        echo "<div>
-        <h1>$this->title</h1>
-        <h2>$this->first_name</h2>
-        <h2>$this->date_added</h2>
-        <h2>$this->picture</h2>
-        <h2>$this->city</h2>
-        </div>"
-        ;
+        echo "
+        <div class='listing'>
+            <img class='listingImage' src='$this->picture'>
+            <div class='listingText'>
+                <h1 class='title'>$this->title</h1>
+                <p class='description'>";
+                //predefined PHP function limits number of characters to 60
+                echo substr($this->description, 0, 60);
+                echo "...</p>
+                <h2 class='nameDate'>$this->first_name - $this->date_added</h2>
+            </div>
+            <h2 class='city'>$this->city</h2>
+        </div>";
     }
-
 }
 //SQL stuff
-
 $sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = $_SESSION[userid];";
 $result = $mySQL->query($sql);
 
@@ -176,7 +182,7 @@ if (mysqli_num_rows($result) == 0) {
 
 
 ?>
-
+</div>
 
 
 

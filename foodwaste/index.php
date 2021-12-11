@@ -45,7 +45,7 @@ if (empty($_SESSION)){
 
     <div class="listings">
         <div class="listingsHeader">
-            <h4 class="listingsText">Nearby Listings</h4>
+            <h4 class="listingsText">Nearby listings</h4>
         </div>
         <?php
         // displaying the user posts
@@ -59,13 +59,21 @@ if (empty($_SESSION)){
             self::$postList[]= $this;
         }
 
-        //Print function for printing the information. 
+        // Print function for printing the information. Not using profile picture, my idea of displaying it only when listing is clicked didn't worked.
+        // When I click on specific listing, I need to get this listing_id, then i can new SELECT with only this listing_id and use print() function
+        // With print function I just need to display the specified listing with other details like profile_picture, full description, message button...
         public function print() {
             echo "<div class='listing'>
             <img class='listingImage' src='$this->picture'>
             <div class='listingText'>
-            <h1 class='title'>$this->title</h1>
-            <p class='description'>";
+            <h1 class='title'>$this->title</h1>";
+            if("$_SESSION[profile_picture]" == NULL){
+                echo "<img class='listingUserImage' src='./icon/user.png'>";
+            }
+            else{
+                echo "<img class='listingUserImage' src='$_SESSION[profile_picture]'>";
+            }
+            echo "<p class='description'>";
             //predefined PHP function limits number of characters to 60
             echo substr($this->description, 0, 60);
             echo "...</p>
@@ -76,8 +84,11 @@ if (empty($_SESSION)){
             ;
         }
         }
-        //Changed select takes all posts
-        $sql = "SELECT * FROM activeposts ORDER BY date_added DESC;";
+        //Changed select takes all posts, used LEFT JOIN to acces profile picture
+        $sql = "SELECT * FROM activeposts
+        LEFT JOIN userinformation 
+        ON activeposts.userid = userinformation.id
+        ORDER BY date_added DESC;";
         $result = $mySQL->query($sql);
 
         if (mysqli_num_rows($result) == 0) { 

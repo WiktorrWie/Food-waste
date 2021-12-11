@@ -23,3 +23,6 @@ function closeMap() {
 function openMap() {
     document.getElementById("map").style.display = "flex";
 }
+
+// Listing
+

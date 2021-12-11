@@ -85,3 +85,13 @@ CALL addPost (1, "Spaghet", "Long spaghetti boys", "google.com/spaghet", "Aarhus
 ALTER TABLE posts
 ADD COLUMN city VARCHAR(50)
 ;
+
+SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE user_id = 2;
+
+CREATE VIEW activeposts as
+SELECT posts.id, profiles.first_name, posts.userid, posts.title, posts.description, posts.date_added, posts.picture, posts.city, posts.active
+FROM posts
+LEFT JOIN profiles
+    ON posts.userid = profiles.id
+WHERE posts.active = 1;
+;
