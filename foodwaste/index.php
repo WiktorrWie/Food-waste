@@ -63,33 +63,41 @@ if (empty($_SESSION)){
         // When I click on specific listing, I need to get this listing_id, then i can new SELECT with only this listing_id and use print() function
         // With print function I just need to display the specified listing with other details like profile_picture, full description, message button...
         public function print() {
-            echo "<div class='listing'>
-            <img class='listingImage' src='$this->picture'>
-            <div class='listingText'>
-            <h1 class='title'>$this->title</h1>";
+            echo "<div class='listing' onclick='openListing($this->id)'>
+            <img class='listingImage' id='listingImage$this->id' src='$this->picture'>
+            <div class='listingText' id='text$this->id'>
+            <h1 class='title'>$this->title</h1>
+            <div class='openListing'>";
+            
             if("$_SESSION[profile_picture]" == NULL){
-                echo "<img class='listingUserImage' src='./icon/user.png'>";
+                echo "<img class='listingUserImage' id='profileImage$this->id' src='./icon/user.png'>";
             }
             else{
-                echo "<img class='listingUserImage' src='$_SESSION[profile_picture]'>";
+                echo "<img class='listingUserImage' id='profileImage$this->id' src='$_SESSION[profile_picture]'>";
             }
-            echo "<p class='description'>";
+            echo "
+            <div>
+            <h2 class='nameDate' id='nameDate$this->id'>$this->first_name - $this->date_added</h2>
+            <h2 class='nameDate fullName' id='name$this->id'>$this->first_name $this->last_name</h2>
+            <h2 class='nameDate display' id='contact$this->id'> $this->contact </h2>
+            <h2 class='nameDate cityOpen' id='cityOpen$this->id'>$this->city  - $this->date_added</h2>
+            </div>
+            </div>";
+            echo "<p class='description' id='shortDescription$this->id'>";
             //predefined PHP function limits number of characters to 60
             echo substr($this->description, 0, 60);
-            echo "...</p>
-            <h2 class='nameDate'>$this->first_name - $this->date_added</h2>
-            <h2 class='nameDate'> $this->contact </h2>
-            </div>
-            <h2 class='city'>$this->city</h2>
-            </div>"
-            ;
+            echo "...</p>";
+            echo "<p class='description fullDescription' id='fullDescription$this->id'>";
+            echo $this->description;
+            echo "</p>";
+            echo "</div>
+            <h2 class='city' id='city$this->id'>$this->city</h2>
+            <h2 class='closeListing' id='close$this->id' onclick='closeListing($this->id)'>Close</h2>
+            </div>";
         }
         }
         //Changed select takes all posts, used LEFT JOIN to acces profile picture
-        $sql = "SELECT * FROM activeposts
-        LEFT JOIN userinformation 
-        ON activeposts.userid = userinformation.id
-        ORDER BY date_added DESC;";
+        $sql = "SELECT * FROM activeposts ORDER BY date_added DESC;";
         $result = $mySQL->query($sql);
 
         if (mysqli_num_rows($result) == 0) { 

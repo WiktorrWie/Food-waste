@@ -543,7 +543,7 @@ h3:hover {
 
 .listingText{
     width: 50%;
-    margin: 0px 50px;
+    margin: 0px 0px 0px 50px;
 }
 
 .title{
@@ -565,10 +565,20 @@ h3:hover {
 
 #map{
     position: absolute;
-    width: 90%;
     display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background-color: var(--gray);
+    height: 100vh;
+    top: 0px;
+    bottom: 0; 
+    width: 100%; 
+}
+
+iframe{
+    height: 800px;
+    width: 90%;
 }
 
 #closeMap{
@@ -643,6 +653,39 @@ textarea{
 
 .listingUserImage{
     width: 80px;
+    height: 80px;
+    display: none;
+    border-radius: 50%;
+    margin: 20px 30px 20px 0px;
+}
+
+.display{
     display: none;
 }
 
+.openListing{
+    display: flex;
+    flex-direction: row;
+}
+
+.cityOpen{
+    display: none;
+}
+
+.fullName{
+    display: none;
+}
+
+.fullDescription{
+    display: none;
+}
+
+.closeListing{
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.onclick{
+}
