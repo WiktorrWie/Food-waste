@@ -50,13 +50,14 @@ function openListing(x) {
     document.getElementById("shortDescription" + x).style.display = "none";
     document.getElementById("fullDescription" + x).style.display = "block";
     document.getElementById("close" + x).style.display = "block";
+    alert("open listing");
 }
 
 function closeListing(x) {
-    document.getElementById("profileImage" + x).style.display = "none";
+    document.getElementById("profileImage" + x).removeAttribute("style");
     document.getElementById("listingImage" + x).style.width = "180px";
     document.getElementById("listingImage" + x).style.height = "180px";
-    document.getElementById("contact" + x).style.display = "none";
+    document.getElementById("contact" + x).setAttribute("style", "");
     document.getElementById("city" + x).style.display = "block";
     document.getElementById("text" + x).style.width = "50%";
     document.getElementById("cityOpen" + x).style.display = "none";
@@ -65,4 +66,5 @@ function closeListing(x) {
     document.getElementById("shortDescription" + x).style.display = "block";
     document.getElementById("fullDescription" + x).style.display = "none";
     document.getElementById("close" + x).style.display = "none";
+    alert("close listing");
 }
