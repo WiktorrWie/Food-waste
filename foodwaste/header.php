@@ -48,6 +48,8 @@
                 </a>
             </li>
 
+            <img class="menu_image" src="./icon/guy-on-phone.png">
+
             <li class="menu_item bottom">
                 <a href="" class="nav_link">
                     <img class="menu_item_icon" src="./icon/log-out.png">
