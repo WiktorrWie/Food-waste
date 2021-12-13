@@ -140,11 +140,37 @@ class Posts {
             </div>
                 <h2 class='city'>$this->city</h2>
                 <img id='deleteListing' src='./icon/close-black.png'>
+
+
+                
+            <form id='delete' method='post' action='?'>
+            <input type='hidden' name='deletePost' value='$this->id'/> 
+            <input type='submit' name='delete' value='Remove!'/>    
+            </form>
         </div>";
     }
 }
+
+    //Deleting posts//
+
+
+if(isset($_POST['delete'])){
+        
+    $id = $_POST['deletePost'];  
+    $query = "UPDATE posts SET active=0 WHERE id=$id"; 
+   // $result = $mySQL->query($query);
+    if($mySQL->query($query) === true){
+             echo "<script>alert('You have succesfully removed your post');</script>";
+            }
+        
+}
+
+
+
+
+
 //SQL stuff
-$sql = "SELECT first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = $_SESSION[userid];";
+$sql = "SELECT id, first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = $_SESSION[userid];";
 $result = $mySQL->query($sql);
 
 
@@ -158,17 +184,21 @@ if (mysqli_num_rows($result) == 0) {
 }
 
 
-    //Deleting posts//
+ /*
+ //deleting posts
+
+if(isset($_POST['delete'])){
+    $query = "UPDATE posts SET active=0 WHERE id=$_POST[deletePost]";
+    if($mySQL->query($sql) === true){
+            echo "<script>alert(You've succesfully removed your post);</script>";
+    }
+}
 
 
-    if(isset($_POST['delete'])){
-        $id = $_POST['deletePost'];  
-        $query = "UPDATE posts SET active=0 WHERE id=$id"; 
-        $result = $mySQL->query($query);
-     }
- 
      $query = "SELECT * FROM posts WHERE userid=$_SESSION[userid] AND active=1;";
      $result = $mySQL->query($query); 
+
+
      while ($row = mysqli_fetch_array($result)) { 
              $id = $row['id'];
              $title = $row['title'];
@@ -183,7 +213,7 @@ if (mysqli_num_rows($result) == 0) {
          <?php
     }   
 
-
+*/
 ?>
 </div>
 
