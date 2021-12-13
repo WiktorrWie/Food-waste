@@ -139,21 +139,17 @@ class Posts {
                 <h2 class='nameDate'>$this->first_name - $this->date_added</h2>
             </div>
                 <h2 class='city'>$this->city</h2>
-                <img id='deleteListing' src='./icon/close-black.png'>
 
-
-                
             <form id='delete' method='post' action='?'>
             <input type='hidden' name='deletePost' value='$this->id'/> 
-            <input type='submit' name='delete' value='Remove!'/>    
+            <button type='submit' name='delete' value='inputvalue' style='background:none;border:none;padding:0'><img id='deleteListing' src='./icon/close-black.png'></button>    
             </form>
         </div>";
     }
 }
 
+
     //Deleting posts//
-
-
 if(isset($_POST['delete'])){
         
     $id = $_POST['deletePost'];  
@@ -164,10 +160,6 @@ if(isset($_POST['delete'])){
             }
         
 }
-
-
-
-
 
 //SQL stuff
 $sql = "SELECT id, first_name, title, description, date_added, picture, city FROM activeposts WHERE userid = $_SESSION[userid];";
@@ -183,37 +175,6 @@ if (mysqli_num_rows($result) == 0) {
     }
 }
 
-
- /*
- //deleting posts
-
-if(isset($_POST['delete'])){
-    $query = "UPDATE posts SET active=0 WHERE id=$_POST[deletePost]";
-    if($mySQL->query($sql) === true){
-            echo "<script>alert(You've succesfully removed your post);</script>";
-    }
-}
-
-
-     $query = "SELECT * FROM posts WHERE userid=$_SESSION[userid] AND active=1;";
-     $result = $mySQL->query($query); 
-
-
-     while ($row = mysqli_fetch_array($result)) { 
-             $id = $row['id'];
-             $title = $row['title'];
-
-         ?>
-
-            <form id="delete" method="post" action="">
-            <input type="hidden" name="deletePost" value="<?php print $id; ?>"/> 
-            <input type="submit" name="delete" value="Delete!"/>    
- 
-            </form>
-         <?php
-    }   
-
-*/
 ?>
 </div>
 
