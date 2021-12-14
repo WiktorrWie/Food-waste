@@ -1,8 +1,8 @@
 <?php 
-    $server = "22585.m.tld.pl"; //localhost
-    $username = "admin22585_food_waste"; //probably root
-    $password = "Qwer1234.";
-    $database = "baza22585_food_waste";
+    $server = "localhost"; //localhost
+    $username = "root"; //probably root
+    $password = "glfthl12345";
+    $database = "foodwaste";
     $mySQL = new mysqli($server, $username, $password, $database);
 
     if (!$mySQL) {

@@ -68,7 +68,7 @@ if (empty($_SESSION)){
                 
                 echo "<div class='listing' id='$this->id' onclick='openListing($this->id)'>
                 <img class='listingImage' id='listingImage$this->id' src='$this->picture'>
-                <div class='listingText' id='text$this->id'>
+                <div class='listingText'>
                 <h1 class='title'>$this->title</h1>
                 <div class='openListing'>";
                 
@@ -79,18 +79,18 @@ if (empty($_SESSION)){
                     echo "<img class='listingUserImage' id='profileImage$this->id' src='$_SESSION[profile_picture]'>";
                 }
                 echo "
-                <div>
-                <h2 class='nameDate' id='nameDate$this->id'>$this->first_name - $this->date_added</h2>
-                <h2 class='nameDate fullName' id='name$this->id'>$this->first_name $this->last_name</h2>
-                <h2 class='nameDate display' id='contact$this->id'> $this->contact </h2>
-                <h2 class='nameDate cityOpen' id='cityOpen$this->id'>$this->city  - $this->date_added</h2>
+                <div class='openListingDetails'>
+                <h2 class='nameDate nameAndDate' id='nameDate$this->id'>$this->first_name - $this->date_added</h2>
+                <h2 class='nameDate fullName'>$this->first_name $this->last_name</h2>
+                <h2 class='nameDate contact'> $this->contact </h2>
+                <h2 class='nameDate cityOpen'>$this->city  - $this->date_added</h2>
                 </div>
                 </div>";
-                echo "<p class='description' id='shortDescription$this->id'>";
+                echo "<p class='description shortDescription'>";
                 //predefined PHP function limits number of characters to 60
                 echo substr($this->description, 0, 60);
                 echo "...</p>";
-                echo "<p class='description fullDescription' id='fullDescription$this->id'>";
+                echo "<p class='description fullDescription'>";
                 echo $this->description;
                 echo "</p>";
                 echo "</div>

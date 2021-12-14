@@ -655,14 +655,14 @@ textarea{
 /* Clicked listing */
 
 .listingUserImage{
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     display: none;
     border-radius: 50%;
     margin: 20px 30px 20px 0px;
 }
 
-.display{
+.contact{
     display: none;
 }
 
@@ -703,4 +703,42 @@ textarea{
 .active .listingImage {
     width: 260px;
     height: 260px;
+}
+
+.active .contact {
+    display: block;
+}
+
+.active .city {
+    display: none;
+}
+
+.active .listingText {
+    width: 100%;
+}
+
+.active .cityOpen {
+    display: block;
+}
+
+.active .fullName {
+    display: block;
+}
+
+.active .nameAndDate {
+    display: none;
+}
+
+.active .shortDescription {
+    display: none;
+}
+
+.active .closeListing {
+    display: block;
+}
+
+.openListingDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
