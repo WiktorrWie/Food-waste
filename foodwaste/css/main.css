@@ -109,7 +109,7 @@ width: 200px;
 /* Welcome page */
 
 #cooking{
-    margin: 170px 0px;
+    margin: 90px 0px;
     width: 600px;
 }
 
@@ -142,7 +142,7 @@ width: 200px;
     display: none;
     position: absolute;
     background-color: var(--green);
-    top: 53.5%;
+    top: 47%;
     padding: 60px 80px;
     border-radius: 30px;
     width: 65%;
@@ -152,7 +152,7 @@ width: 200px;
     display: none;
     position: absolute;
     background-color: var(--green);
-    top: 53.5%;
+    top: 47%;
     padding: 60px 80px;
     border-radius: 30px;
     width: 65%;
@@ -161,14 +161,14 @@ width: 200px;
 
 #welcomeLogo{
     width: 600px;
-    margin: 50px 0px 30px 0px;
+    margin: 20px 0px 10px 0px;
 }
 
 #welcome{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .marginA{
