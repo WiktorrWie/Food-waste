@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require("../database/database.php");
 
 if (!empty($_POST)){
@@ -26,10 +27,12 @@ if ($fileType == "png" || $fileType == "jpg" || $fileType == "jpeg") {
         
         if($mySQL->query($sql) === true){
              header("location: ../index.php?post=succes");
+             ob_end_flush();
             exit;
             }
         else {
              header("location: ../addPost.php?post=error");
+             ob_end_flush();
             exit;
         }
     
@@ -37,11 +40,13 @@ if ($fileType == "png" || $fileType == "jpg" || $fileType == "jpeg") {
     else 
 {
     header("location: ../addPost.php?error=large");
+    ob_end_flush();
     exit;
 }
 } else 
 {
     header("location: ../addPost.php?error=format");
+    ob_end_flush();
     exit;
 }
 

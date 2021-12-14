@@ -25,6 +25,7 @@ if (!empty($_FILES["fileToUpload"])){
             //CALL addPicture (profile_picture);
             $sql= "CALL addPicture($_SESSION[userid], '$picture');";
             if($mySQL->query($sql) === true){
+                $_SESSION["profile_picture"] = $picture;
                  header("location: ../profile.php?post=succes");
                 exit;
             }

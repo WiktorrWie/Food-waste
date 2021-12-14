@@ -1,13 +1,20 @@
-<!DOCTYPE html>
 <?php
-require("./database/database.php");
-
 session_start();
+ob_start();
+ // header("location: login/welcome.php");
 
 if (empty($_SESSION)){
     header("location: login/welcome.php");
+    ob_end_flush();
     exit;
 }
+?>
+<!DOCTYPE html>
+<?php
+
+require("./database/database.php");
+
+
 
 ?>
 

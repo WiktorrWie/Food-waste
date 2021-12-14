@@ -1,13 +1,22 @@
-<!DOCTYPE html>
 <?php
-require("./database/database.php");
-
 session_start();
+ob_start();
+ // header("location: login/welcome.php");
 
 if (empty($_SESSION)){
     header("location: login/welcome.php");
+    ob_end_flush();
     exit;
 }
+?>
+
+<!DOCTYPE html>
+<?php
+
+require("./database/database.php");
+ob_start();
+
+
 
 ?>
 
@@ -53,7 +62,7 @@ if (empty($_SESSION)){
         // displaying the user posts
         //CLASS object with static list of all of its kind
 
-        class Posts {
+       class Posts {
         public static $postList = [];
 
             //Class constructor
@@ -72,12 +81,13 @@ if (empty($_SESSION)){
                 <h1 class='title'>$this->title</h1>
                 <div class='openListing'>";
                 
-                if("$_SESSION[profile_picture]" == NULL){
+                if("$this->profile_picture" == NULL){
                     echo "<img class='listingUserImage' id='profileImage$this->id' src='./icon/user.png'>";
                 }
                 else{
-                    echo "<img class='listingUserImage' id='profileImage$this->id' src='$_SESSION[profile_picture]'>";
+                    echo "<img class='listingUserImage' id='profileImage$this->id' src='$this->profile_picture'>";
                 }
+                
                 echo "
                 <div class='openListingDetails'>
                 <h2 class='nameDate nameAndDate' id='nameDate$this->id'>$this->first_name - $this->date_added</h2>
