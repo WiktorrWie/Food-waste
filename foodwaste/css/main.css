@@ -690,3 +690,17 @@ textarea{
     right: 30px;
     top: 10px;
 }
+
+
+.active .fullDescription {
+    display: block;
+}
+
+.active .listingUserImage {
+    display: block;
+}
+
+.active .listingImage {
+    width: 260px;
+    height: 260px;
+}

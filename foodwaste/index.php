@@ -46,8 +46,10 @@ if (empty($_SESSION)){
     <div class="listings">
         <div class="listingsHeader">
             <h4 class="listingsText">Nearby listings</h4>
+            
         </div>
         <?php
+
         // displaying the user posts
         //CLASS object with static list of all of its kind
 
@@ -63,7 +65,8 @@ if (empty($_SESSION)){
             // When I click on specific listing, I need to get this listing_id, then i can new SELECT with only this listing_id and use print() function
             // With print function I just need to display the specified listing with other details like profile_picture, full description, message button...
             public function print() {
-                echo "<div class='listing' onclick='openListing($this->id)'>
+                
+                echo "<div class='listing' id='$this->id' onclick='openListing($this->id)'>
                 <img class='listingImage' id='listingImage$this->id' src='$this->picture'>
                 <div class='listingText' id='text$this->id'>
                 <h1 class='title'>$this->title</h1>
