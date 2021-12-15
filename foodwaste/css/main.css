@@ -553,7 +553,7 @@ h3:hover {
 
 .title{
     margin: 0px;
-    font-size: 30pt;
+    font-size: 34pt;
     font-weight: 700;
 }
 
@@ -564,7 +564,7 @@ h3:hover {
 
 .nameDate{
     margin: 0px;
-    font-size: 22pt;
+    font-size: 25pt;
     font-weight: 500;
 }
 
@@ -683,7 +683,7 @@ textarea{
 
 .fullDescription{
     display: none;
-    font-size: 22pt;
+    font-size: 25pt;
 }
 
 .closeListing{
@@ -691,6 +691,7 @@ textarea{
     position: absolute;
     right: 30px;
     top: 10px;
+    font-size: 26pt;
 }
 
 

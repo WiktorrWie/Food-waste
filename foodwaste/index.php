@@ -70,27 +70,24 @@ ob_start();
                 self::$postList[]= $this;
             }
 
-            // Print function for printing the information. Not using profile picture, my idea of displaying it only when listing is clicked didn't worked.
-            // When I click on specific listing, I need to get this listing_id, then i can new SELECT with only this listing_id and use print() function
-            // With print function I just need to display the specified listing with other details like profile_picture, full description, message button...
+            // print() function for printing the listings.
             public function print() {
-                
                 echo "<div class='listing' id='$this->id' onclick='openListing($this->id)'>
-                <img class='listingImage' id='listingImage$this->id' src='$this->picture'>
+                <img class='listingImage' src='$this->picture'>
                 <div class='listingText'>
                 <h1 class='title'>$this->title</h1>
                 <div class='openListing'>";
                 
                 if("$this->profile_picture" == NULL){
-                    echo "<img class='listingUserImage' id='profileImage$this->id' src='./icon/user.png'>";
+                    echo "<img class='listingUserImage' src='./icon/user.png'>";
                 }
                 else{
-                    echo "<img class='listingUserImage' id='profileImage$this->id' src='$this->profile_picture'>";
+                    echo "<img class='listingUserImage' src='$this->profile_picture'>";
                 }
                 
                 echo "
                 <div class='openListingDetails'>
-                <h2 class='nameDate nameAndDate' id='nameDate$this->id'>$this->first_name - $this->date_added</h2>
+                <h2 class='nameDate nameAndDate'>$this->first_name - $this->date_added</h2>
                 <h2 class='nameDate fullName'>$this->first_name $this->last_name</h2>
                 <h2 class='nameDate contact'> $this->contact </h2>
                 <h2 class='nameDate cityOpen'>$this->city  - $this->date_added</h2>
@@ -110,7 +107,7 @@ ob_start();
             }
             
         }
-        //Changed select takes all posts, used LEFT JOIN to acces profile picture
+        //Changed select takes all posts
         $sql = "SELECT * FROM activeposts ORDER BY date_added DESC;";
         $result = $mySQL->query($sql);
 

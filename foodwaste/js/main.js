@@ -39,27 +39,7 @@ function showSubmit() {
 
 function openListing(x) {
 
-    
-
     document.getElementById(x).classList.toggle("active");
-    /*
-        //document.getElementById("profileImage" + x).style.display = "block";
-        document.getElementById("listingImage" + x).style.width = "260px";
-        document.getElementById("listingImage" + x).style.height = "260px";
-        document.getElementById("contact" + x).style.display = "block";
-        document.getElementById("city" + x).style.display = "none";
-        document.getElementById("text" + x).style.width = "100%";
-        document.getElementById("cityOpen" + x).style.display = "block";
-        document.getElementById("name" + x).style.display = "block";
-        document.getElementById("nameDate" + x).style.display = "none";
-        document.getElementById("shortDescription" + x).style.display = "none";
-        document.getElementById("fullDescription" + x).style.display = "block";
-        document.getElementById("close" + x).style.display = "block";
-        document.getElementById("profileImage" + x).classList.add("active");
-        console.log("opening");
-    
-    
 
-    */
 }
 
