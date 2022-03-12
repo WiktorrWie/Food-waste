@@ -1,8 +1,8 @@
 <?php 
     $server = "localhost"; //localhost
     $username = "root"; //probably root
-    $password = "glfthl12345";
-    $database = "foodwaste";
+    $password = "glfthl12345"; //your password
+    $database = "foodwaste"; //database name
     $mySQL = new mysqli($server, $username, $password, $database);
 
     if (!$mySQL) {

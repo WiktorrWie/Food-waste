@@ -36,10 +36,9 @@ function showSubmit() {
 
 
 //Function with parameter where x is a post id
-
 function openListing(x) {
-
     document.getElementById(x).classList.toggle("active");
-
 }
+
+
 

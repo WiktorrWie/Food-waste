@@ -48,3 +48,78 @@ require("./database/database.php");
     </section>  
 </body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+
+/* class Human {
+
+    // Properties
+    private $height;
+    private $weight;
+    private $speed;
+    
+    // Methods
+    public function run($distance) {
+    echo "on $distance meters your time would be: ";
+    echo round($distance / $this -> speed * 3.6, 2);
+    echo " seconds </br>";
+    }
+    function kick() {
+    echo "kick strength: "; 
+    echo $this -> weight * $this -> height;
+    }
+    
+    function __construct($height, $weight, $speed) {
+    $this->height = $height;
+    $this->weight = $weight;
+    $this->speed = $speed;
+    }
+}
+    
+    $Wiktor = new Human(1.85, 78, 28);
+    
+    $Wiktor ->run(100);
+    // Result: on 100 meters your time would be: 12.86 seconds
+    
+    $Wiktor ->kick();
+    // Result: kick strength: 144.3
+*/
+
+class Human {
+    // Properties
+    private $hobby;
+    public static $specie = "Homo sapiens";
+
+    // Methods
+    function message() {
+      echo "My hobby is: $this -> hobby ";
+    }
+  }
+ echo Human::$specie ;
+
+?>
+
+
+
+
+
+
+
+
+
+

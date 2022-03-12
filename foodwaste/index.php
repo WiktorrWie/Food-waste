@@ -14,6 +14,7 @@ if (empty($_SESSION)){
 <?php
 
 require("./database/database.php");
+
 ob_start();
 
 
@@ -128,3 +129,28 @@ ob_start();
     </div>
     </body>
 </html>
+
+
+<?php
+    $jsonString = '{"Databases":10,"Frontend":10,"Interaction":10,"Backend":"no grade"}';
+    // Decoding $jsonString into JSON object
+    $decoded = json_decode($jsonString);
+    // Display information about one or more variables
+    var_dump($decoded);
+    // Result: object(stdClass)#5 (4) { ["Databases"]=> int(10) ["Frontend"]=> int(10) ["Interaction"]=> int(10) ["Backend"]=> string(8) "no grade" }
+    $decoded->Backend = 10;
+    // changing grade to 10
+    $encoded = json_encode($decoded);
+    echo $encoded;
+    // Result: {"Databases":10,"Frontend":10,"Interaction":10,"Backend":10}
+    file_put_contents('file.json', $encoded);
+    // generating file.json file
+
+    $grades = array(
+        "Databases"=>10, 
+        "Frontend"=>10, 
+        "Interaction"=>10, 
+        "Backend"=>"no grade"
+    );
+    echo '<pre>'; print_r($grades); echo '</pre>';
+?>
